@@ -9,7 +9,7 @@ np.set_printoptions(linewidth=130, suppress=True)
 
 layers = 28
 total_shards = 8
-ckpt_dir = "step_383500/"
+ckpt_dir = "../step_383500/"
 output_dir = "j6b_ckpt"
 
 def reshard(x, old_shape):
@@ -157,5 +157,5 @@ del checkpoint['transformer.wte.bias']
 
 print(f"left over: {unsharded}")
 print("saving")
-torch.save(checkpoint, "./gpt-j-hf/pytorch_model.bin") # load as in: https://github.com/finetuneanon/misc/blob/main/SizeTest.ipynb
+torch.save(checkpoint, "../gpt-j-hf/pytorch_model.bin") # load as in: https://github.com/finetuneanon/misc/blob/main/SizeTest.ipynb
 print("done")
