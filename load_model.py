@@ -198,3 +198,7 @@ with open('config.json', 'r') as f:
 model = GPTNeoForCausalLM.from_pretrained(pretrained_model_name_or_path=None, config=config, state_dict=Checkpoint())
 print("ok")
 model.eval()
+
+model = GPTNeoForCausalLM.from_pretrained("./gpt-j-hf")
+tokenizer = transformers.GPT2Tokenizer.from_pretrained('gpt2')
+model.half().cuda()
